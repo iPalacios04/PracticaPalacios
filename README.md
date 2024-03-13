@@ -1,4 +1,4 @@
-# PracticaPalacios
+# Practica Iñigo Palacios
 
 https://github.com/iPalacios04/PracticaPalacios.git
 
