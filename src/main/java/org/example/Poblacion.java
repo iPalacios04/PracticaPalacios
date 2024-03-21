@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.*;
-public class Poblacion extends Experimento {
+public class Poblacion extends Dosis{
 
     private String nombre;
     private Date fechaInicial;
@@ -35,43 +35,61 @@ public class Poblacion extends Experimento {
         this.fechaFinal = fechaFinal;
     }
 
-    @Override
     public int getNumBacterias() {
         return numBacterias;
     }
 
-    @Override
     public void setNumBacterias(int numBacterias) {
         this.numBacterias = numBacterias;
     }
 
-    @Override
     public double getTemperatura() {
         return temperatura;
     }
 
-    @Override
+
     public void setTemperatura(double temperatura) {
         this.temperatura = temperatura;
     }
 
-    @Override
+
     public Luminosidad getLuz() {
         return luz;
     }
 
-    @Override
+
     public void setLuz(Luminosidad luz) {
         this.luz = luz;
     }
 
-    @Override
     public Dosis getDosisComida() {
         return dosisComida;
     }
 
-    @Override
     public void setDosisComida(Dosis dosisComida) {
         this.dosisComida = dosisComida;
     }
+
+    public Poblacion(String nombre, Date fechaInicial, Date fechaFinal, int numBacterias, double temperatura, Luminosidad luz, Dosis dosisComida, int cantidadInicial, int diaIntroducido, int cantidadDiaIntroducido, int cantidadAnadir, Scanner scanner, String nombre1, Date fechaInicial1, Date fechaFinal1, int numBacterias1, double temperatura1, Luminosidad luz1, Dosis dosisComida1) {
+        super(nombre, fechaInicial, fechaFinal, numBacterias, temperatura, luz, dosisComida, cantidadInicial, diaIntroducido, cantidadDiaIntroducido, cantidadAnadir, scanner);
+        this.nombre = nombre1;
+        this.fechaInicial = fechaInicial1;
+        this.fechaFinal = fechaFinal1;
+        this.numBacterias = numBacterias1;
+        this.temperatura = temperatura1;
+        this.luz = luz1;
+        this.dosisComida = dosisComida1;
+    }
+
+    public String toString(){
+        return "Poblacion{Nombre: " + nombre +
+            "\nFecha Inicial: " + fechaInicial +
+            "\nFecha Final: " + fechaFinal +
+            "\nNumero de Bacterias: " + numBacterias +
+            "\nTemperatura: " + temperatura +
+            "\nLuminosidad: " + luz +
+            "\nDosis de Comida: " + dosisComida +"}";
+
+    }
 }
+
