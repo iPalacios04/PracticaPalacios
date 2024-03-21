@@ -9,7 +9,7 @@ public class Dosis {
     private int maximaCantidad;
     private int cantidadFinal;
     private int dosis;
-    public Dosis(int cantidadInicial, int diaFinIncremento, int cantidadAnadir, int cantidadFinal) {
+    public Dosis(int cantidadInicial, int diaFinIncremento, int maximaCantidad, int cantidadFinal, int dosis) {
         this.cantidadInicial = cantidadInicial;
         this.diaFinIncremento = diaFinIncremento;
         this.maximaCantidad = maximaCantidad;
