@@ -1,4 +1,4 @@
-package org.example;
+package Procesamiento;
 
 public enum Luminosidad {
 

@@ -1,6 +1,6 @@
-package org.example;
+package Procesamiento;
 import java.util.ArrayList;
-import java.util.*;;
+;
 
 public class Experimento extends Laboratorio{
 
