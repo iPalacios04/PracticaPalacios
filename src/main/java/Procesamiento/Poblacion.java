@@ -11,6 +11,9 @@ public class Poblacion{
     public double temperatura; // Es la temperatura de la poblacion
     public Luminosidad luz; // Es la luminosidad de la poblacion
     public Dosis dosisComida; // Es la dosis de comida de la poblacion
+    public String fechaInicio;
+    public String fechaFin;
+    public String luminosidad;
 
     public Poblacion (String nombre, int idPoblacion, Date fechaInicial, Date fechaFinal, int numBacterias, double temperatura, Luminosidad luz, Dosis dosisComida){
         this.nombre = nombre;
@@ -22,6 +25,9 @@ public class Poblacion{
         this.luz = luz;
         this.dosisComida = dosisComida;
     } // Creamos el constructor de la clase Poblacion
+
+    public Poblacion(String nombrePoblacion, int idPoblacion, String fechaInicio, String fechaFin, int numBacterias, float temperatura, Luminosidad luminosidad, Dosis dosis) {
+    }
 
     public String toString(){
         return "Poblacion{Nombre: " + nombre +
