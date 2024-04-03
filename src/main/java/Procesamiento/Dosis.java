@@ -4,21 +4,30 @@ import java.util.Scanner;
 
 public class Dosis {
 
-    private int cantidadInicial; // Es la cantidad inicial de la dosis
+    private double cantidadInicial; // Es la cantidad inicial de la dosis
     private int diaFinIncremento; //Es el dia en el que pasa a decrecer la cantidad de comida
-    private int maximaCantidad; // Es la cantidad maxima de la dosis
-    private int cantidadFinal; // Es la cantidad final de la dosis
-    private int dosis;// Es la cantidad de comida que se debe proporcionar en x dia
-    public Dosis(int cantidadInicial, int diaFinIncremento, int maximaCantidad, int cantidadFinal, int dosis) {
+    private double maximaCantidad; // Es la cantidad maxima de la dosis
+    private double cantidadFinal; // Es la cantidad final de la dosis
+    private double dosis;// Es la cantidad de comida que se debe proporcionar en x dia
+    public Dosis(double cantidadInicial, int diaFinIncremento, double maximaCantidad, double cantidadFinal){
+        if (diaFinIncremento == 1 || diaFinIncremento == 30) {
+            throw new IllegalArgumentException("El dia de incremento introducido no es valido");
+        }
+        if (cantidadInicial > 300 || cantidadFinal > 300) {
+            throw new IllegalArgumentException("La cantidad inicial y final no pueden ser mayores a 300");
+        }
+        if (maximaCantidad > (300 - cantidadInicial)) {
+            throw new IllegalArgumentException("La cantidad maxima no puede ser mayor a 300 - cantidadInicial");
+        }
         this.cantidadInicial = cantidadInicial;
         this.diaFinIncremento = diaFinIncremento;
         this.maximaCantidad = maximaCantidad;
-        this.dosis = dosis;
         this.cantidadFinal = cantidadFinal;
     }
-    public int calculoDosis(int dia){
 
-        int cantidadAnadir = (maximaCantidad - cantidadInicial) / (diaFinIncremento - 1);
+    public double calculoDosis(int dia){
+
+        double cantidadAnadir = (maximaCantidad - cantidadInicial) / (diaFinIncremento - 1);
 
         if(dia <= diaFinIncremento){
 
@@ -28,7 +37,7 @@ public class Dosis {
         }
         else{
 
-            int disminucion = (maximaCantidad - cantidadFinal / (30 - diaFinIncremento));
+            double disminucion = (maximaCantidad - cantidadFinal / (30 - diaFinIncremento));
             dosis = maximaCantidad - disminucion * (dia - diaFinIncremento);
 
             return dosis;

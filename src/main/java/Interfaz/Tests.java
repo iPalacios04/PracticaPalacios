@@ -1,4 +1,4 @@
 package Interfaz;
 
-public class Tests {
+class Tests {
 }
