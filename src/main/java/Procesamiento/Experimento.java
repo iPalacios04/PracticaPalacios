@@ -1,50 +1,30 @@
 package Procesamiento;
 import java.util.ArrayList;
+import java.util.Date;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-public class Experimento extends Laboratorio{
+public class Experimento{
 
-    private ArrayList<Poblacion> Poblacion = new ArrayList<Poblacion>();
+    public int idExperimento; // Es el identificador del experimento
+    public int numExperimento; // Es el numero de experimento
+    public String nombreExperimento; // Es el nombre del experimento
+    private ArrayList<Poblacion> Poblaciones; // Es la lista de poblaciones del experimento
 
-    public void abrirExperimento(String rutaArchivo){
-        try {
+    public Experimento(int idExperimento, int numExperimento, String nombreExperimento, ArrayList<Poblacion> Poblaciones){
+        this.idExperimento = idExperimento;
+        this.numExperimento = numExperimento;
+        this.nombreExperimento = nombreExperimento;
+        this.Poblaciones = Poblaciones;
+    } // Creamos el constructor de la clase Experimento
 
-            BufferedReader lector = new BufferedReader(new FileReader(rutaArchivo));
-            String linea = lector.readLine();
-            while (linea != null){
-                String[] datos = linea.split(",");
-                Poblacion poblacion = new Poblacion();
-                poblacion.setNombre(datos[0]);
-                poblacion.setFechaInicial(datos[1]);
-                poblacion.setFechaFinal(datos[2]);
-                poblacion.setNumBacterias(Integer.parseInt(datos[3]));
-                poblacion.setTemperatura(Double.parseDouble(datos[4]));
-                poblacion.setLuz(datos[5]);
-                poblacion.setDosisComida(Integer.parseInt(datos[6]), Integer.parseInt(datos[7]), Integer.parseInt(datos[8]), Integer.parseInt(datos[9]), Integer.parseInt(datos[10]));
-                Poblacion.add(poblacion);
-                linea = lector.readLine();
-            }
-            lector.close();
-        } catch (IOException e) {
-            System.out.println("Ha ocurrido un error al abrir el archivo"+ e.getMessage());
-        }
-    }
+    public void addPoblacion (Poblacion poblacion){
+        this.Poblaciones.add(poblacion);
+    } // Añadimos una poblacion a la lista de poblaciones del experimento
 
-    public Experimento (ArrayList<Poblacion> Poblacion){
-        this.Poblacion = Poblacion;
-    }
-
-    public Poblacion crearPoblacion(String nombre, String fechaInicial, String fechaFinal, int numBacterias, double temperatura, Luminosidad luz, int cantidadInicial, int diaFinIncremento, int maximaCantidad, int cantidadFinal, int dosis){
-        Poblacion poblacion = new Poblacion();
-        poblacion.setNombre(nombre);
-        poblacion.setFechaInicial(fechaInicial);
-        poblacion.setFechaFinal(fechaFinal);
-        poblacion.setNumBacterias(numBacterias);
-        poblacion.setTemperatura(temperatura);
-        poblacion.setLuz(luz);
-        poblacion.setDosisComida(cantidadInicial, diaFinIncremento, maximaCantidad, cantidadFinal, dosis);
-        return nuevaPoblacion;
-    }
+    public void newPoblacion(String nombre, int idPoblacion, Date fechaInicio, Date fechaFin, int numBacterias, float temperatura, Luminosidad luminosidad, Dosis dosisComida){
+        Poblacion poblacion = new Poblacion(nombre, idPoblacion, fechaInicio, fechaFin, numBacterias, temperatura, luminosidad, dosisComida);
+        addPoblacion(poblacion);
+    } // Creamos una nueva poblacion y la añadimos a la lista de poblaciones del experimento
 
 }

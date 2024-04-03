@@ -1,85 +1,27 @@
 package Procesamiento;
 
 import java.util.*;
-public class Poblacion extends Dosis{
+public class Poblacion{
 
-    private String nombre;
-    private Date fechaInicial;
-    private Date fechaFinal;
-    private int numBacterias;
-    private double temperatura;
-    private Luminosidad luz;
-    private Dosis dosisComida;
+    public String nombre; // Es el nombre de la poblacion
+    public int idPoblacion; // Es el identificador de la poblacion
+    public Date fechaInicial; // Es la fecha de inicio de la poblacion
+    public Date fechaFinal; // Es la fecha de fin de la poblacion
+    public int numBacterias; // Es el numero de bacterias de la poblacion
+    public double temperatura; // Es la temperatura de la poblacion
+    public Luminosidad luz; // Es la luminosidad de la poblacion
+    public Dosis dosisComida; // Es la dosis de comida de la poblacion
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    public Poblacion (String nombre, int idPoblacion, Date fechaInicial, Date fechaFinal, int numBacterias, double temperatura, Luminosidad luz, Dosis dosisComida){
         this.nombre = nombre;
-    }
-
-    public Date getFechaInicial() {
-        return fechaInicial;
-    }
-
-    public void setFechaInicial(Date fechaInicial) {
+        this.idPoblacion = idPoblacion;
         this.fechaInicial = fechaInicial;
-    }
-
-    public Date getFechaFinal() {
-        return fechaFinal;
-    }
-
-    public void setFechaFinal(Date fechaFinal) {
         this.fechaFinal = fechaFinal;
-    }
-
-    public int getNumBacterias() {
-        return numBacterias;
-    }
-
-    public void setNumBacterias(int numBacterias) {
         this.numBacterias = numBacterias;
-    }
-
-    public double getTemperatura() {
-        return temperatura;
-    }
-
-
-    public void setTemperatura(double temperatura) {
         this.temperatura = temperatura;
-    }
-
-
-    public Luminosidad getLuz() {
-        return luz;
-    }
-
-
-    public void setLuz(Luminosidad luz) {
         this.luz = luz;
-    }
-
-    public Dosis getDosisComida() {
-        return dosisComida;
-    }
-
-    public void setDosisComida(Dosis dosisComida) {
         this.dosisComida = dosisComida;
-    }
-
-    public Poblacion(String nombre, Date fechaInicial, Date fechaFinal, int numBacterias, double temperatura, Luminosidad luz, Dosis dosisComida, int cantidadInicial, int diaIntroducido, int cantidadDiaIntroducido, int cantidadAnadir, Scanner scanner, String nombre1, Date fechaInicial1, Date fechaFinal1, int numBacterias1, double temperatura1, Luminosidad luz1, Dosis dosisComida1) {
-        super(nombre, fechaInicial, fechaFinal, numBacterias, temperatura, luz, dosisComida, cantidadInicial, diaIntroducido, cantidadDiaIntroducido, cantidadAnadir, scanner);
-        this.nombre = nombre1;
-        this.fechaInicial = fechaInicial1;
-        this.fechaFinal = fechaFinal1;
-        this.numBacterias = numBacterias1;
-        this.temperatura = temperatura1;
-        this.luz = luz1;
-        this.dosisComida = dosisComida1;
-    }
+    } // Creamos el constructor de la clase Poblacion
 
     public String toString(){
         return "Poblacion{Nombre: " + nombre +
@@ -88,8 +30,8 @@ public class Poblacion extends Dosis{
             "\nNumero de Bacterias: " + numBacterias +
             "\nTemperatura: " + temperatura +
             "\nLuminosidad: " + luz +
-            "\nDosis de Comida: " + dosisComida +"}";
+            "\nDosis de Comida: " + dosisComida + "}";
 
-    }
+    } // Devuelve una representacion en cadena de la poblacion
 }
 

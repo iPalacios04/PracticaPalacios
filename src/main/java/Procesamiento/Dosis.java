@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Dosis {
 
-    private int cantidadInicial;
+    private int cantidadInicial; // Es la cantidad inicial de la dosis
     private int diaFinIncremento; //Es el dia en el que pasa a decrecer la cantidad de comida
-    private int maximaCantidad;
-    private int cantidadFinal;
-    private int dosis;
+    private int maximaCantidad; // Es la cantidad maxima de la dosis
+    private int cantidadFinal; // Es la cantidad final de la dosis
+    private int dosis;// Es la cantidad de comida que se debe proporcionar en x dia
     public Dosis(int cantidadInicial, int diaFinIncremento, int maximaCantidad, int cantidadFinal, int dosis) {
         this.cantidadInicial = cantidadInicial;
         this.diaFinIncremento = diaFinIncremento;
