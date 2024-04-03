@@ -43,4 +43,56 @@ public class Dosis {
             return dosis;
         }
     }
+
+    @Override
+    public String toString(){
+        return "Dosis{Cantidad Inicial: " + cantidadInicial +
+            "\nDia de incremento: " + diaFinIncremento +
+            "\nCantidad Maxima: " + maximaCantidad +
+            "\nCantidad Final: " + cantidadFinal + "}";
+    }// Devolvemos una representacion en cadena de la dosis
+
+
+    //Incluimos los getters y setters de la clase Dosis
+
+
+    public double getCantidadInicial() {
+        return cantidadInicial;
+    }
+
+    public void setCantidadInicial(double cantidadInicial) {
+        this.cantidadInicial = cantidadInicial;
+    }
+
+    public int getDiaFinIncremento() {
+        return diaFinIncremento;
+    }
+
+    public void setDiaFinIncremento(int diaFinIncremento) {
+        this.diaFinIncremento = diaFinIncremento;
+    }
+
+    public double getMaximaCantidad() {
+        return maximaCantidad;
+    }
+
+    public void setMaximaCantidad(double maximaCantidad) {
+        this.maximaCantidad = maximaCantidad;
+    }
+
+    public double getCantidadFinal() {
+        return cantidadFinal;
+    }
+
+    public void setCantidadFinal(double cantidadFinal) {
+        this.cantidadFinal = cantidadFinal;
+    }
+
+    public double getDosis() {
+        return dosis;
+    }
+
+    public void setDosis(double dosis) {
+        this.dosis = dosis;
+    }
 }

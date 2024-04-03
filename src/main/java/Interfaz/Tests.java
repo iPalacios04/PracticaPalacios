@@ -1,4 +1,0 @@
-package Interfaz;
-
-class Tests {
-}

@@ -11,9 +11,10 @@ public class Experimento{
     public String nombreExperimento; // Es el nombre del experimento
     private ArrayList<Poblacion> Poblaciones; // Es la lista de poblaciones del experimento
 
-    public Experimento(int idExperimento, int numExperimento, String nombreExperimento, ArrayList<Poblacion> Poblaciones){
+    public Experimento(int idExperimento, String nombreExperimento, String direccionArchivo , ArrayList<Poblacion> Poblaciones){
         this.idExperimento = idExperimento;
         this.nombreExperimento = nombreExperimento;
+        this.direccionArchivo = direccionArchivo;
         this.Poblaciones = Poblaciones;
     } // Creamos el constructor de la clase Experimento
 

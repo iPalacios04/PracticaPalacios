@@ -33,5 +33,78 @@ public class Poblacion{
             "\nDosis de Comida: " + dosisComida + "}";
 
     } // Devuelve una representacion en cadena de la poblacion
+
+    @Override
+
+    public int hashCode() {
+        return Objects.hash(nombre, idPoblacion, fechaInicial, fechaFinal, numBacterias, temperatura, luz, dosisComida);
+    } // Devuelve el hashcode de la poblacion
+
+    //Incluimos los getters y setters de la clase Poblacion
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getIdPoblacion() {
+        return idPoblacion;
+    }
+
+    public void setIdPoblacion(int idPoblacion) {
+        this.idPoblacion = idPoblacion;
+    }
+
+    public Date getFechaInicial() {
+        return fechaInicial;
+    }
+
+    public void setFechaInicial(Date fechaInicial) {
+        this.fechaInicial = fechaInicial;
+    }
+
+    public Date getFechaFinal() {
+        return fechaFinal;
+    }
+
+    public void setFechaFinal(Date fechaFinal) {
+        this.fechaFinal = fechaFinal;
+    }
+
+    public int getNumBacterias() {
+        return numBacterias;
+    }
+
+    public void setNumBacterias(int numBacterias) {
+        this.numBacterias = numBacterias;
+    }
+
+    public double getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(double temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    public Luminosidad getLuz() {
+        return luz;
+    }
+
+    public void setLuz(Luminosidad luz) {
+        this.luz = luz;
+    }
+
+    public Dosis getDosisComida() {
+        return dosisComida;
+    }
+
+    public void setDosisComida(Dosis dosisComida) {
+        this.dosisComida = dosisComida;
+    }
 }
 
