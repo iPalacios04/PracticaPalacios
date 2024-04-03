@@ -35,4 +35,16 @@ public class Experimento extends Laboratorio{
         this.Poblacion = Poblacion;
     }
 
+    public Poblacion crearPoblacion(String nombre, String fechaInicial, String fechaFinal, int numBacterias, double temperatura, Luminosidad luz, int cantidadInicial, int diaFinIncremento, int maximaCantidad, int cantidadFinal, int dosis){
+        Poblacion poblacion = new Poblacion();
+        poblacion.setNombre(nombre);
+        poblacion.setFechaInicial(fechaInicial);
+        poblacion.setFechaFinal(fechaFinal);
+        poblacion.setNumBacterias(numBacterias);
+        poblacion.setTemperatura(temperatura);
+        poblacion.setLuz(luz);
+        poblacion.setDosisComida(cantidadInicial, diaFinIncremento, maximaCantidad, cantidadFinal, dosis);
+        return nuevaPoblacion;
+    }
+
 }
